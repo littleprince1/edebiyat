@@ -24,5 +24,10 @@ namespace Edebiyat
         {
             InitializeComponent();
         }
+
+        private void Ekmek_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Cumburlop");
+        }
     }
 }
