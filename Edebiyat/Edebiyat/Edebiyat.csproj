@@ -84,9 +84,17 @@
     </Compile>
     <Compile Include="DbModel.cs" />
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Sayfalar\Register.xaml.cs">
+      <DependentUpon>Register.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Siniflar\Account.cs" />
     <Compile Include="Siniflar\DataController.cs" />
     <Compile Include="Siniflar\User.cs" />
+    <Compile Include="U_Kontroller\CustomTextBox.xaml.cs">
+      <DependentUpon>CustomTextBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Yardimci_Dosyalar\BildiriPenceresi.cs" />
+    <Compile Include="Yardimci_Dosyalar\Methods.cs" />
     <Compile Include="Yardimci_Dosyalar\Pencere_Ayarlari.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -131,14 +139,20 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Sayfalar\Register.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="U_Kontroller\CustomTextBox.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resimler\Books.png" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Sayfalar\" />
     <Folder Include="Sesler\" />
-    <Folder Include="U_Kontroller\" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">
