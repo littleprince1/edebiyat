@@ -6,16 +6,6 @@
         xmlns:local="clr-namespace:Edebiyat.Pencereler"
         mc:Ignorable="d"
         Title="AnaPencere"  d:DesignWidth="800" d:DesignHeight="600" Style="{StaticResource StandartWindow}">
-    <Window.Triggers>
-        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
-            <BeginStoryboard>
-                <Storyboard>
-                    <DoubleAnimation Storyboard.TargetProperty="Opacity" From="0" To="1" RepeatBehavior="1x" Duration="0:0:0.7" />
-                </Storyboard>
-            </BeginStoryboard>
-        </EventTrigger>
-    </Window.Triggers>
-    
     <Grid >
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
