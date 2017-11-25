@@ -2,8 +2,53 @@
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:Edebiyat"
-             StartupUri="MainWindow.xaml">
+             StartupUri="Pencereler/AnaPencere.xaml">
     <Application.Resources>
-         
+        <SolidColorBrush x:Key="color_0" Color="#e0f8f4" />
+        <SolidColorBrush x:Key="color_1" Color="#8cbebd" />
+        <SolidColorBrush x:Key="color_2" Color="#68a0a4" />
+        <SolidColorBrush x:Key="color_3" Color="#f78686" />
+        <SolidColorBrush x:Key="color_4" Color="#f06060" />
+        <SolidColorBrush x:Key="color_5" Color="#e9dd96" />
+        <SolidColorBrush x:Key="color_6" Color="#f7cd7f" />
+        <SolidColorBrush x:Key="color_7" Color="#f3b562" />
+        <SolidColorBrush x:Key="color_8" Color="#d79651" />
+        <SolidColorBrush x:Key="color_9" Color="#2f2c38" />
+        <SolidColorBrush x:Key="color_10" Color="#373442" />
+        <SolidColorBrush x:Key="color_11" Color="#504c57" />
+
+        <Style x:Key="Window_Top_Buttons" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border x:Name="brdGövde" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" Background="{x:Null}">
+                            <Viewbox>
+                                <Label x:Name="cp" FontFamily="Segoe MDL2 Assets" Foreground="{StaticResource color_7}"  Content="{TemplateBinding Content}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+                            </Viewbox>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="cp" Property="Foreground" Value="{StaticResource color_6}"/>
+                                <Setter Property="Cursor" Value="Hand"/>
+                            </Trigger>
+
+                            <Trigger Property="IsPressed" Value="True" >
+                                <Setter TargetName="cp" Property="Foreground" Value="{StaticResource color_8}"/>
+                                <Setter Property="Cursor" Value="Hand"/>
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <Style x:Key="StandartWindow" TargetType="Window">
+            <Setter Property="AllowsTransparency" Value="True"/>
+            <Setter Property="ResizeMode" Value="NoResize"/>
+            <Setter Property="WindowStyle" Value="None"/>
+            <Setter Property="Background" Value="{StaticResource color_9}"/>
+            <Setter Property="FontFamily" Value="Global User Interface"/>
+        </Style>
     </Application.Resources>
 </Application>

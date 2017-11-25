@@ -13,5 +13,11 @@ namespace Edebiyat
     /// </summary>
     public partial class App : Application
     {
+        public static double Screen_Height = SystemParameters.PrimaryScreenHeight;
+        public static double Screen_Width = SystemParameters.PrimaryScreenWidth;
+        App()
+        {
+
+        }
     }
 }

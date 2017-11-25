@@ -10,24 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace Edebiyat
+namespace Edebiyat.Pencereler
 {
     /// <summary>
-    /// MainWindow.xaml etkileşim mantığı
+    /// Interaction logic for Window_Colors.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Window_Colors : Window
     {
-        public MainWindow()
+        public Window_Colors()
         {
             InitializeComponent();
-        }
-
-        private void Ekmek_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Cumburlop");
         }
     }
 }

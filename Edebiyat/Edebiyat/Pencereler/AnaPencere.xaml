@@ -1,0 +1,31 @@
+﻿<Window x:Class="Edebiyat.Pencereler.AnaPencere"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Edebiyat.Pencereler"
+        mc:Ignorable="d"
+        Title="AnaPencere"  d:DesignWidth="800" d:DesignHeight="600" Style="{StaticResource StandartWindow}">
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid Margin="5,1,5,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="30"/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="auto"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.ColumnSpan="2" Panel.ZIndex="2" MouseDown="DragMove_Event"/>
+            <Image x:Name="Logo" Source="/Edebiyat;component/Resimler/Books.png" Margin="2"/>
+            <Label x:Name="W_Title" Grid.Column="1" Content="BASLIK" VerticalContentAlignment="Center" FontSize="19" FontFamily="Global User Interface" FontWeight="Bold" FontStyle="Italic" Foreground="White"/>
+            <DockPanel Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Top" Height="25" Margin="0,1,0,0">
+                <Button  Style="{StaticResource Window_Top_Buttons}"  Content=""  Click="Window_Minimized"/>
+                <Button  Style="{StaticResource Window_Top_Buttons}"  Content=""  Click="Window_Maximized"/>
+                <Button  Style="{StaticResource Window_Top_Buttons}"  Content=""  Click="Window_Closed"/>
+            </DockPanel>
+        </Grid>
+        <Frame x:Name="SayfaYoneticisi" Grid.Row="1" Margin="5"/>
+    </Grid>
+</Window>

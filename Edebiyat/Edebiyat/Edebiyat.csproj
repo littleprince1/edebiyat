@@ -54,20 +54,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Yardimci_Dosyalar\Pencere_Ayarlari.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pencereler\AnaPencere.xaml.cs">
+      <DependentUpon>AnaPencere.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pencereler\Window_Colors.xaml.cs">
+      <DependentUpon>Window_Colors.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -92,6 +91,25 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Pencereler\AnaPencere.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pencereler\Window_Colors.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resimler\Books.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Sayfalar\" />
+    <Folder Include="Sesler\" />
+    <Folder Include="Siniflar\" />
+    <Folder Include="U_Kontroller\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
