@@ -13,7 +13,7 @@
             <Border BorderBrush="{StaticResource color_11}" BorderThickness="7" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="35" CornerRadius="17" Background="{StaticResource color_2}">
                 <StackPanel>
                     <DockPanel Margin="10">
-                        <TextBlock Foreground="{StaticResource color_0}" Text="Kullanıcı Adi: " Width="100" TextAlignment="Left"/>
+                        <TextBlock Foreground="{StaticResource color_0}" Text="Kullanıcı Adı: " Width="100" TextAlignment="Left"/>
                         <U_Kontroller:CustomTextBox x:Name="tbxUsername" Tip="Kullanıcı Adı"  Width="150"/>
                     </DockPanel>
                     <DockPanel Margin="10">
