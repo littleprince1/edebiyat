@@ -7,6 +7,6 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid>
-        <Button Name="Ekmek" Content="Cumburlop" FontSize="50" Click="Ekmek_Click"/>
+        <Button Name="Ekmek" Content="Patates" FontSize="50" Click="Ekmek_Click"/>
     </Grid>
 </Window>
