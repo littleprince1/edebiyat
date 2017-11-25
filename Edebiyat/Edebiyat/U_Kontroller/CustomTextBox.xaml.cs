@@ -35,6 +35,12 @@ namespace Edebiyat.U_Kontroller
             set { tip = value; tb.Text = tip; }
         }
 
+        public TextBox TextBox
+        {
+            get { return tb;}
+
+        }
+
 
         private void tb_GotFocus(object sender, RoutedEventArgs e)
         {

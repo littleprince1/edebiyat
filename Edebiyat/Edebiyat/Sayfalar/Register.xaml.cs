@@ -1,4 +1,5 @@
-﻿using Microsoft.Win32;
+﻿using Edebiyat.Siniflar;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
+using Edebiyat.Yardimci_Dosyalar;
 using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
@@ -25,6 +27,21 @@ namespace Edebiyat.Sayfalar
         public Register()
         {
             InitializeComponent();
+            tbxEmail.tb.TextChanged += Tb_TextChanged;
+     
+        }
+
+        private void Tb_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            if (Methods.EmailKontrol(tbxEmail.TextBox.Text))
+            {
+                btnRegister.IsEnabled = true;
+            } 
+            else
+            {
+                btnRegister.IsEnabled = false;
+            }
+
         }
 
         private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
@@ -44,6 +61,27 @@ namespace Edebiyat.Sayfalar
             }
         }
 
-    
+        private void btnRegister_Click(object sender, RoutedEventArgs e)
+        {
+            string username = tbxUsername.Content.ToString();
+            string password = tbxPassword.Content.ToString();
+            string email = tbxEmail.Content.ToString();
+            if (!string.IsNullOrWhiteSpace(username) || !string.IsNullOrWhiteSpace(password) || !string.IsNullOrWhiteSpace(email))
+            {
+                User yUser = new User();
+                yUser.userName = username;
+                yUser.Password = password;
+                yUser.eMail = email;
+                yUser.Image = userImg.Source as BitmapSource;     
+                DataController.Db.Users.Add(yUser);
+                DataController.Db.SaveChanges();
+                NavigationService.Refresh();
+               
+              
+            }
+
+        }
+
+     
     }
 }

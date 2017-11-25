@@ -23,8 +23,8 @@ namespace Edebiyat.Yardimci_Dosyalar
             }
             else
             {
-                window.Width = App.Screen_Width - 70;
-                window.Height = App.Screen_Height - 120;
+                window.Width = App.Screen_Width - 133;
+                window.Height = App.Screen_Height - 100;
                 CenterWindowOnScreen(window);
             }
         }

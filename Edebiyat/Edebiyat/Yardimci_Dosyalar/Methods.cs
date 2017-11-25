@@ -80,6 +80,14 @@ namespace Edebiyat.Yardimci_Dosyalar
                 e.Handled = true;
             }
         }
+
+        public static void BoşlukKontrol(TextCompositionEventArgs e)
+        {
+            if (" ".Contains(e.Text))
+            {
+                e.Handled = true;
+            }
+        }
         public static void SadeceSayıGirme(TextCompositionEventArgs e)
         {
             if (Sayılar.Contains(e.Text))

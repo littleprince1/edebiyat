@@ -14,15 +14,15 @@
                 <StackPanel>
                     <DockPanel Margin="10">
                         <TextBlock Foreground="{StaticResource color_0}" Text="Kullanıcı Adi: " Width="100" TextAlignment="Left"/>
-                        <U_Kontroller:CustomTextBox x:Name="tbxUsername" Tip="Kullanıcı Adı"  Width="150"/>
+                        <U_Kontroller:CustomTextBox x:Name="tbxUsername" Tip="Kullanıcı Adı"  Width="150" />
                     </DockPanel>
                     <DockPanel Margin="10">
                         <TextBlock  Foreground="{StaticResource color_0}" Text="Parola: " Width="100" TextAlignment="Left"/>
-                        <U_Kontroller:CustomTextBox x:Name="pbxPassword" Tip="Parola" Width="150"/>
+                        <U_Kontroller:CustomTextBox x:Name="tbxPassword" Tip="Parola" Width="150" />
                     </DockPanel>
                     <DockPanel Margin="10">
                         <TextBlock  Foreground="{StaticResource color_0}" Text="E-Mail: " Width="100" TextAlignment="Left"/>
-                        <U_Kontroller:CustomTextBox x:Name="tbxEmail" Tip="E-mail" Width="150"/>
+                        <U_Kontroller:CustomTextBox x:Name="tbxEmail" Tip="E-mail" Width="150" />
                     </DockPanel>
                     <DockPanel Margin="10">
                         <TextBlock  Foreground="{StaticResource color_0}" Text="Kullanıcı Görseli: " Width="100" TextAlignment="Left"/>
@@ -33,7 +33,7 @@
                             </Grid>
                         </Border>
                     </DockPanel>
-                    <Button Name="btnRegister" Content="K A Y I T" Style="{StaticResource Tuslar}" Width="100" Height="30"/>
+                    <Button Name="btnRegister" Content="K A Y I T" Style="{StaticResource Tuslar}" Width="100" Height="30" Margin="0,15,0,0" Click="btnRegister_Click"/>
                 </StackPanel>
             </Border>
          
