@@ -77,5 +77,29 @@
                 </Setter.Value>
             </Setter>
         </Style>
+        <Style x:Key="Tuslar" TargetType="Button">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="15" x:Name="brdGövde" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" Background="{StaticResource color_10}">
+                            <TextBlock  Foreground="White" Text="{TemplateBinding Content}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="brdGövde" Property="Background" Value="{StaticResource color_11}"/>
+                                <Setter Property="Cursor" Value="Hand"/>
+                            </Trigger>
+
+                            <Trigger Property="IsPressed" Value="True" >
+                                <Setter TargetName="brdGövde" Property="Background" Value="{StaticResource color_9}"/>
+                                <Setter Property="Cursor" Value="Hand"/>
+                            </Trigger>
+
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
     </Application.Resources>
 </Application>

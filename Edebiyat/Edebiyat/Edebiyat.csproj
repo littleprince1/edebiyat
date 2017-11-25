@@ -93,7 +93,6 @@
     <Compile Include="U_Kontroller\CustomTextBox.xaml.cs">
       <DependentUpon>CustomTextBox.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Yardimci_Dosyalar\BildiriPenceresi.cs" />
     <Compile Include="Yardimci_Dosyalar\Methods.cs" />
     <Compile Include="Yardimci_Dosyalar\Pencere_Ayarlari.cs" />
   </ItemGroup>

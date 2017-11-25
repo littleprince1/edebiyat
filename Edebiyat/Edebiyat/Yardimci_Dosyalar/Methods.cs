@@ -25,7 +25,6 @@ namespace Edebiyat.Yardimci_Dosyalar
         static string Sayılar = "0123456789";
         static string Güvenlik_Kodu = "";
         static Random rnd = new Random();
-        static BildiriPenceresi a;
         static string Kod;
         static string Eposta;
         static MailMessage msj = new MailMessage();
@@ -128,14 +127,14 @@ namespace Edebiyat.Yardimci_Dosyalar
                 if (response.StatusCode == HttpStatusCode.OK) return true;
                 else
                 {
-                    a = new BildiriPenceresi(false, 3, "Lütfen İnternet Bağlantınızı Kontrol Ediniz");
+                    //a = new BildiriPenceresi(false, 3, "Lütfen İnternet Bağlantınızı Kontrol Ediniz");
                     return false;
                 }
 
             }
             catch
             {
-                a = new BildiriPenceresi(false, 3, "Lütfen İnternet Bağlantınızı Kontrol Ediniz");
+                //a = new BildiriPenceresi(false, 3, "Lütfen İnternet Bağlantınızı Kontrol Ediniz");
                 return false;
             }
         }
@@ -178,7 +177,7 @@ namespace Edebiyat.Yardimci_Dosyalar
                 }
                 catch
                 {
-                    a = new BildiriPenceresi(false, 5, "Mesajınız İletilemedi");
+                    //a = new BildiriPenceresi(false, 5, "Mesajınız İletilemedi");
                     return "0";
                 }
             }

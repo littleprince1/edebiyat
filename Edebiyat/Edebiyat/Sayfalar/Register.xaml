@@ -33,7 +33,7 @@
                             </Grid>
                         </Border>
                     </DockPanel>
-                    <Button Name="btnRegister" Content="K A Y I T" Background="{StaticResource color_10}" Foreground="{StaticResource color_0}" BorderThickness="0"/>
+                    <Button Name="btnRegister" Content="K A Y I T" Style="{StaticResource Tuslar}" Width="100" Height="30"/>
                 </StackPanel>
             </Border>
          
