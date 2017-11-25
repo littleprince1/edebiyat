@@ -24,7 +24,8 @@ namespace Edebiyat.U_Kontroller
         {
             InitializeComponent();
             tb.Text = Tip;
-            tb.Foreground = Brushes.Gray;
+            var bc = new BrushConverter();
+            tb.Foreground = (Brush)bc.ConvertFrom("#2f2c38"); ;
         }
         private string tip;
 
@@ -50,7 +51,8 @@ namespace Edebiyat.U_Kontroller
             if (tb.Text.Length == 0)
             {
                 tb.Text = Tip;
-                tb.Foreground = Brushes.Gray;
+                var bc = new BrushConverter();
+                tb.Foreground = (Brush)bc.ConvertFrom("#2f2c38"); ;
             }
         }
     }
