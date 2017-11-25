@@ -66,7 +66,9 @@ namespace Edebiyat.Sayfalar
             string username = tbxUsername.Content.ToString();
             string password = tbxPassword.Content.ToString();
             string email = tbxEmail.Content.ToString();
-            if (!string.IsNullOrWhiteSpace(username) || !string.IsNullOrWhiteSpace(password) || !string.IsNullOrWhiteSpace(email))
+            if ((!string.IsNullOrWhiteSpace(username) && username != tbxUsername.Tip) ||
+                (!string.IsNullOrWhiteSpace(password) && password != tbxPassword.Tip) ||
+                (!string.IsNullOrWhiteSpace(email) && email != tbxEmail.Tip))
             {
                 User yUser = new User();
                 yUser.userName = username;
