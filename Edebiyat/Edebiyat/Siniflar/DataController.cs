@@ -17,5 +17,6 @@ namespace Edebiyat.Siniflar
         }
         public static User CurrentUser { get; set; }
         public static DbModel Db = new DbModel();
+        public static Bildiri_Pencereleri.My_NotifyIcon notifyIcon;
     }
 }

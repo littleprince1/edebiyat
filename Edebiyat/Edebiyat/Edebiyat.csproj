@@ -84,10 +84,10 @@
     </Compile>
     <Compile Include="DbModel.cs" />
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Notify_Windows\Mesaj_Kutusu.xaml.cs">
+    <Compile Include="BildiriPencereleri\Mesaj_Kutusu.xaml.cs">
       <DependentUpon>Mesaj_Kutusu.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Notify_Windows\My_NotifyIcon.xaml.cs">
+    <Compile Include="BildiriPencereleri\My_NotifyIcon.xaml.cs">
       <DependentUpon>My_NotifyIcon.xaml</DependentUpon>
     </Compile>
     <Compile Include="Sayfalar\Register.xaml.cs">
@@ -136,11 +136,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Page Include="Notify_Windows\Mesaj_Kutusu.xaml">
+    <Page Include="BildiriPencereleri\Mesaj_Kutusu.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Notify_Windows\My_NotifyIcon.xaml">
+    <Page Include="BildiriPencereleri\My_NotifyIcon.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>

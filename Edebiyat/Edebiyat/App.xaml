@@ -16,7 +16,6 @@
         <SolidColorBrush x:Key="color_9" Color="#2f2c38" />
         <SolidColorBrush x:Key="color_10" Color="#373442" />
         <SolidColorBrush x:Key="color_11" Color="#504c57" />
-
         <Style x:Key="Window_Top_Buttons" TargetType="Button">
             <Setter Property="Template">
                 <Setter.Value>
@@ -42,7 +41,6 @@
                 </Setter.Value>
             </Setter>
         </Style>
-
         <Style x:Key="StandartWindow" TargetType="Window">
             <Setter Property="AllowsTransparency" Value="True"/>
             <Setter Property="ResizeMode" Value="NoResize"/>
@@ -100,6 +98,15 @@
                 </Setter.Value>
             </Setter>
         </Style>
-
+        <Style x:Key="Mini_Close_Button" TargetType="TextBlock">
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="FontWeight"  Value="Bold"/>
+                    <Setter Property="Cursor"  Value="Hand"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
     </Application.Resources>
 </Application>

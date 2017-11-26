@@ -11,7 +11,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
 namespace Edebiyat.Pencereler
 {
     /// <summary>
@@ -27,6 +26,13 @@ namespace Edebiyat.Pencereler
             Yardimci_Dosyalar.Pencere_Ayarlari.Main_Window_Logo = Logo;
             Yardimci_Dosyalar.Pencere_Ayarlari.Main_Window_Title = W_Title;
             Yardimci_Dosyalar.Pencere_Ayarlari.Size_adjustment(this);
+            Loaded += AnaPencere_Loaded;
+            
+        }
+
+        private void AnaPencere_Loaded(object sender, RoutedEventArgs e)
+        {
+            Bildiri_Pencereleri.My_NotifyIcon my_NotifyIcon = new Bildiri_Pencereleri.My_NotifyIcon("My_NotifyIcon", 4, true);
         }
 
         private void DragMove_Event(object sender, MouseButtonEventArgs e) { if (e.LeftButton == MouseButtonState.Pressed) Yardimci_Dosyalar.Pencere_Ayarlari.Window_DragMove(this); }
