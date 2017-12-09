@@ -27,23 +27,8 @@ namespace Edebiyat.Sayfalar
         public Register()
         {
             InitializeComponent();
-            tbxEmail.tb.TextChanged += Tb_TextChanged;
-     
-        }
-
-        private void Tb_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            if (Methods.EmailKontrol(tbxEmail.TextBox.Text))
-            {
-                btnRegister.IsEnabled = true;
-            } 
-            else
-            {
-                btnRegister.IsEnabled = false;
-            }
 
         }
-
         private void Border_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             OpenFileDialog a = new OpenFileDialog()
@@ -60,28 +45,133 @@ namespace Edebiyat.Sayfalar
                 imgTip.Visibility = Visibility.Hidden;
             }
         }
-
-        private void btnRegister_Click(object sender, RoutedEventArgs e)
+        public bool TB_Control(U_Kontroller.CustomTextBox customTextBox)
         {
-            string username = tbxUsername.Content.ToString();
-            string password = tbxPassword.Content.ToString();
-            string email = tbxEmail.Content.ToString();
-            if (!string.IsNullOrWhiteSpace(username) || !string.IsNullOrWhiteSpace(password) || !string.IsNullOrWhiteSpace(email))
+            bool kontrol = false;
+            if (customTextBox.tb.Text != customTextBox.Tip)
+                if (!string.IsNullOrWhiteSpace(customTextBox.tb.Text))
+                    kontrol = true;
+            return kontrol;
+        }
+        public bool TB_Control(U_Kontroller.CustomPasswordBox customTextBox)
+        {
+            bool kontrol = false;
+            if (customTextBox.pb.Password != customTextBox.Tip)
+                if (!string.IsNullOrWhiteSpace(customTextBox.pb.Password))
+                    kontrol = true;
+            return kontrol;
+        }
+        public bool Kontrol()
+        {
+            bool kontrol = false;
+            bool img = userImg.Source != null;
+            bool email = TB_Control(tbxEmail);
+            bool pass = TB_Control(tbxPassword);
+            bool username = TB_Control(tbxUsername);
+            if (img == true && email == true && pass == true && username == true)
+                kontrol = true;
+            return kontrol;
+        }
+        string hata_mesaj = "";
+        int Hata_sayac = 0;
+        public bool Kullanici_Varmi()
+        {
+            bool kontrol = false;
+            bool B_user = true, B_email = true;
+            User user_username = DataController.Db.Users.Where(x => x.userName == tbxUsername.tb.Text).FirstOrDefault();
+            if (user_username != null)
             {
-                User yUser = new User();
-                yUser.userName = username;
-                yUser.Password = password;
-                yUser.eMail = email;
-                yUser.Image = userImg.Source as BitmapSource;     
-                DataController.Db.Users.Add(yUser);
-                DataController.Db.SaveChanges();
-                NavigationService.Refresh();
-               
-              
+                B_user = false;
+                hata_mesaj += "*Bu Kullanıcı adına sahip bir kullanıcı bulunmaktadır.\n";
+                Hata_sayac++;
             }
 
+            User user_email = DataController.Db.Users.Where(x => x.eMail == tbxEmail.tb.Text).FirstOrDefault();
+            if (user_email != null)
+            {
+                B_email = false;
+                hata_mesaj += "*Bu E-Mail'e sahip bir kullanıcı bulunmaktadır.\n";
+                Hata_sayac++;
+            }
+            if (B_user && B_email)
+                kontrol = true;
+            return kontrol;
         }
+        public bool Password_Kontrol()
+        {
+            bool B_paswoard = true;
+            bool BüyükHarfOlma = false, SayıOlma = false;
+            foreach (char gelen in tbxPassword.pb.Password)
+            {
+                if (!Methods.Sayılar.Contains(gelen))
+                    if (gelen.ToString() == gelen.ToString().ToUpper())
+                        BüyükHarfOlma = true;
+                if (Methods.Sayılar.Contains(gelen))
+                    SayıOlma = true;
+            }
+            if (tbxPassword.pb.Password.Length < 8)
+            {
+                B_paswoard = false;
+                hata_mesaj += "*Şifreniz en az 8 karakterden oluşmalıdır\n";
+                Hata_sayac++;
+            }
+            if (BüyükHarfOlma == false)
+            {
+                B_paswoard = false;
+                hata_mesaj += "*Şifrenizde en az 1 Büyük karakter bulunması gerekmektedir.\n";
+                Hata_sayac++;
+            }
+            if (SayıOlma == false)
+            {
+                B_paswoard = false;
+                hata_mesaj += "*Şifrenizde en az 1 rakam bulunması gerekmektedir.\n";
+                Hata_sayac++;
+            }
 
-     
+            return B_paswoard;
+        }
+        public bool Email_Kontrol()
+        {
+            bool kontrol = false;
+            kontrol = Methods.EmailKontrol(tbxEmail.tb.Text);
+            if (!kontrol)
+            {
+                hata_mesaj += "*E-Mail adresiniz doğru formatta değil.\n";
+                Hata_sayac++;
+            }
+            return kontrol;
+        }
+        private void btnRegister_Click(object sender, RoutedEventArgs e)
+        {
+            hata_mesaj = "";
+            Hata_sayac = 0;
+            if (Kontrol())
+            {
+                bool B_Kullanici_Varmi = Kullanici_Varmi();
+                bool B_Password_Kontrol = Password_Kontrol();
+                bool B_Email_Kontrol = Email_Kontrol();
+                if (B_Email_Kontrol && B_Kullanici_Varmi && B_Password_Kontrol)
+                {
+
+                    User yUser = new User();
+                    yUser.userName = tbxUsername.tb.Text;
+                    yUser.Password = tbxPassword.pb.Password;
+                    yUser.eMail = tbxEmail.tb.Text;
+                    yUser.Image = userImg.Source as BitmapSource;
+                    DataController.Db.Users.Add(yUser);
+                    DataController.Db.SaveChanges();
+                    NavigationService.Refresh();
+                    Bildiri_Pencereleri.Mesaj_Kutusu mesaj_Kutusu = new Bildiri_Pencereleri.Mesaj_Kutusu("Kullanıcı Başarı ile Kayıt Edildi.","","","Tamam");
+                }
+                else
+                {
+                    Bildiri_Pencereleri.Mesaj_Kutusu mesaj_Kutusu = new Bildiri_Pencereleri.Mesaj_Kutusu(hata_mesaj, $"{Hata_sayac} adet hata vardır.", "", "Tamam");
+                }
+            }
+            else
+            {
+                Bildiri_Pencereleri.Mesaj_Kutusu mesaj_Kutusu = new Bildiri_Pencereleri.Mesaj_Kutusu("Lütfen tüm bilgileri eksiksiz doldurunuz", "", "", "Tamam");
+            }
+        }
     }
 }

@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Edebiyat.Pencereler"
+        xmlns:Sayfalar="clr-namespace:Edebiyat.Sayfalar"
         mc:Ignorable="d"
         Title="AnaPencere"  d:DesignWidth="800" d:DesignHeight="600" Style="{StaticResource StandartWindow}">
     <Grid >
@@ -26,6 +27,6 @@
                 <Button  Style="{StaticResource Window_Top_Buttons}"  Content=""  Click="Window_Closed"/>
             </DockPanel>
         </Grid>
-        <Frame x:Name="SayfaYoneticisi" Grid.Row="1" Source="/Sayfalar/Register.xaml" Margin="5"/>
+        <Frame x:Name="SayfaYoneticisi" Visibility="Visible" NavigationUIVisibility="Hidden" Grid.Row="1" Source="/Sayfalar/Register.xaml" Margin="5"/>
     </Grid>
 </Window>

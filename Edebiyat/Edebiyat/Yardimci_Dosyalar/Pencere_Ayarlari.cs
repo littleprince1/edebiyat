@@ -16,9 +16,9 @@ namespace Edebiyat.Yardimci_Dosyalar
         public static Image Main_Window_Logo;
         public static void Size_adjustment(Window window)
         {
-            if (App.Screen_Height < 600 || App.Screen_Width < 800)
+            if (App.Screen_Height < 500 || App.Screen_Width < 700)
             {
-                MessageBox.Show("Git Monitör Ekran kartı fln bişeyler al pis fakir");
+                Bildiri_Pencereleri.Mesaj_Kutusu mesaj_Kutusu = new Bildiri_Pencereleri.Mesaj_Kutusu("Monitörünüz Uygulamanın minumum boyutlarını gösterebilecek Çözünürlükte Değildir");
                 Application.Current.Shutdown();
             }
             else

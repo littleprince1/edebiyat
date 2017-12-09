@@ -22,7 +22,7 @@ namespace Edebiyat.Yardimci_Dosyalar
         #region Değişkenler
         static string Kodtutucu = "AB0CD1E9F6GHI2JKL7MNO3PRSUV4YZX5W8Q";
         static string Karakterler = "A0BC1DE2FGH8I3JK7LMNO4PRST5U9VY6Z";
-        static string Sayılar = "0123456789";
+        public static string Sayılar = "0123456789";
         static string Güvenlik_Kodu = "";
         static Random rnd = new Random();
         static string Kod;

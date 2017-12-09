@@ -44,7 +44,6 @@ namespace Edebiyat.Bildiri_Pencereleri
                 Show();
             }
         }
-        DoubleAnimation _fadeInAnimation;
 
         private void DispatcherTimer_Tick(object sender, EventArgs e)
         {

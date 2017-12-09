@@ -17,24 +17,25 @@ using System.Windows.Shapes;
 namespace Edebiyat.U_Kontroller
 {
     /// <summary>
-    /// CustomTextBox.xaml etkileşim mantığı
+    /// Interaction logic for CustomPasswordBox.xaml
     /// </summary>
-    public partial class CustomTextBox : UserControl
+    public partial class CustomPasswordBox : UserControl
     {
-        public CustomTextBox()
+        public CustomPasswordBox()
         {
             InitializeComponent();
-            tb.Text = Tip;
+            pb.Password = Tip;
             var bc = new BrushConverter();
-            tb.Foreground = (Brush)bc.ConvertFrom("#2f2c38"); ;
+            pb.Foreground = (Brush)bc.ConvertFrom("#2f2c38"); ;
         }
+
 
         private string toolTip;
 
         public string C_ToolTip
         {
             get { return toolTip; }
-            set { toolTip = value; Methods.ToolTip(toolTip, tb); }
+            set { toolTip = value; Methods.ToolTip(toolTip.ToString(),pb); }
         }
 
         private string tip;
@@ -42,43 +43,27 @@ namespace Edebiyat.U_Kontroller
         public string Tip
         {
             get { return tip; }
-            set { tip = value; tb.Text = tip; }
-        }
-
-        public TextBox TextBox
-        {
-            get { return tb;}
-
-        }
-
-
-        private void tb_GotFocus(object sender, RoutedEventArgs e)
-        {
-            if (tb.Text == Tip)
-            {
-                tb.Clear();
-                var bc = new BrushConverter();
-                tb.Foreground = (Brush)bc.ConvertFrom("#e0f8f4"); ;
-            }
+            set { tip = value; pb.Password = tip; }
         }
 
         private void tb_LostFocus(object sender, RoutedEventArgs e)
         {
-            if (tb.Text.Length == 0)
+            if (pb.Password.Length == 0)
             {
-                tb.Text = Tip;
+                pb.Password = Tip;
                 var bc = new BrushConverter();
-                tb.Foreground = (Brush)bc.ConvertFrom("#2f2c38"); ;
-            }
-            else
-            {
-                tb.CaretIndex = 0;
+                pb.Foreground = (Brush)bc.ConvertFrom("#2f2c38"); ;
             }
         }
 
-        private void tb_LostFocus_1(object sender, RoutedEventArgs e)
+        private void tb_GotFocus(object sender, RoutedEventArgs e)
         {
-
+            if (pb.Password == Tip)
+            {
+                pb.Clear();
+                var bc = new BrushConverter();
+                pb.Foreground = (Brush)bc.ConvertFrom("#e0f8f4"); ;
+            }
         }
     }
 }

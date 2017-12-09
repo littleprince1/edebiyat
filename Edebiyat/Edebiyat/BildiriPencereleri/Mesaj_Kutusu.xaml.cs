@@ -43,8 +43,8 @@ namespace Edebiyat.Bildiri_Pencereleri
             InitializeComponent();
             İçerikBölümü.Text = İçerik;
             BaşlıkBölümü.Text = Başlık;
-            Soldaki.Content = SoldakiTus;
-            Sağdaki.Content = SağdakiTus;
+            Soldaki.Content = $"    {SoldakiTus}    ";
+            Sağdaki.Content = $"    {SağdakiTus}    ";
             if (SoldakiTus.Length == 0)
                 Soldaki.Visibility = Visibility.Collapsed;
             if (SağdakiTus.Length == 0)

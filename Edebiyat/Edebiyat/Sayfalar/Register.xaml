@@ -18,17 +18,17 @@
                     </DockPanel>
                     <DockPanel Margin="10">
                         <TextBlock  Foreground="{StaticResource color_0}" Text="Parola: " Width="100" TextAlignment="Left"/>
-                        <U_Kontroller:CustomTextBox x:Name="tbxPassword" Tip="Parola" Width="150" />
+                        <U_Kontroller:CustomPasswordBox C_ToolTip=" Parolanınz en az 8 karakterden oluşmalı. &#10; Parolanızda en az 1 Büyük harf bulunmalı. &#10; Parolanızda en az bir rakam bulunmalı." x:Name="tbxPassword" Tip="Parola" Width="150" />
                     </DockPanel>
                     <DockPanel Margin="10">
                         <TextBlock  Foreground="{StaticResource color_0}" Text="E-Mail: " Width="100" TextAlignment="Left"/>
-                        <U_Kontroller:CustomTextBox x:Name="tbxEmail" Tip="E-mail" Width="150" />
+                        <U_Kontroller:CustomTextBox C_ToolTip="E-Mail formatınız : &#10; xxxxxxxx@xxxxxx.xxx &#10; şeklinde olmalı" x:Name="tbxEmail" Tip="E-mail" Width="150" />
                     </DockPanel>
                     <DockPanel Margin="10">
                         <TextBlock  Foreground="{StaticResource color_0}" Text="Kullanıcı Görseli: " Width="100" TextAlignment="Left"/>
-                        <Border Width="150" Height="150" BorderBrush="Black" BorderThickness="1" MouseLeftButtonDown="Border_MouseLeftButtonDown">
+                        <Border Width="150" Height="150" BorderBrush="{StaticResource color_11}" BorderThickness="2" MouseLeftButtonDown="Border_MouseLeftButtonDown">
                             <Grid>
-                                <TextBlock Name="imgTip" Text="Görsel Seçiniz..." HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                <TextBlock Style="{StaticResource Mini_Close_Button}" Name="imgTip" Text="Görsel Seçiniz..." HorizontalAlignment="Center" VerticalAlignment="Center"/>
                                 <Image Name="userImg" Margin="3"/>
                             </Grid>
                         </Border>
