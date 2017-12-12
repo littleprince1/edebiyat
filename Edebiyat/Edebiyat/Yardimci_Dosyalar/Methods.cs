@@ -32,6 +32,13 @@ namespace Edebiyat.Yardimci_Dosyalar
         #endregion
 
 
+        public static Brush Hex_to_Brush(string Hex)
+        {
+            var bc = new BrushConverter();
+            var brush = (Brush)bc.ConvertFrom(Hex);
+            return brush;
+        }
+
         public static bool EmailKontrol(string EpostaAdres)
         {
             const string strRegex = @"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}" +

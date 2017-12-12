@@ -35,7 +35,7 @@ namespace Edebiyat.Sayfalar
             {
                 Title = "Resim  Seç",
                 Multiselect = false,
-                Filter = "Resim Dosyaları| *.jpg;*.png;*.pns;*.bmp;*.ico;*.jpeg;*.bmp;|Tüm Dosyalar|*.*;",
+                Filter = "Resim Dosyaları| *.jpg;*.png;*.pns;*.bmp;*.ico;*.jpeg;*.bmp;",
                 InitialDirectory = Environment.GetFolderPath(Environment.SpecialFolder.Desktop),
                 RestoreDirectory = true,
             };

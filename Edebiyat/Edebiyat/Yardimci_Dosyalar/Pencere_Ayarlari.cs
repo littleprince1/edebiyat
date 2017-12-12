@@ -42,7 +42,12 @@ namespace Edebiyat.Yardimci_Dosyalar
         }
         public static void Window_Minimized(Window window) => window.WindowState = WindowState.Minimized;
         public static void Window_DragMove(Window window) => window.DragMove();
-        public static void Window_Closed(Window window) => window.Close();
+        public static void Window_Closed(Window window)
+        {
+            Bildiri_Pencereleri.Mesaj_Kutusu mesaj_Kutusu = new Bildiri_Pencereleri.Mesaj_Kutusu("Pencereden Çıkmak istediğinize emin misiniz?", "Bildiri", "Evet", "Hayır");
+            if (mesaj_Kutusu.Sonuç == true)
+                window.Close();
+        }
         public static void Window_Normal(Window window)
         {
             window.WindowState = WindowState.Normal;

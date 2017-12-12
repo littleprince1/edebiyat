@@ -23,6 +23,11 @@ namespace Edebiyat.Pencereler
 
         private void Window_Maximized(object sender, RoutedEventArgs e) => Yardimci_Dosyalar.Pencere_Ayarlari.Window_Maximized(this);
 
-        private void Window_Closed(object sender, RoutedEventArgs e) => Yardimci_Dosyalar.Pencere_Ayarlari.Window_Closed(this);
+        private void Window_Closed(object sender, RoutedEventArgs e)
+        {
+            Bildiri_Pencereleri.Mesaj_Kutusu mesaj_Kutusu = new Bildiri_Pencereleri.Mesaj_Kutusu("Uygulamadan Çıkmak istediğinize emin misiniz?","Bildiri","Evet","Hayır");
+            if (mesaj_Kutusu.Sonuç==true)
+                Application.Current.Shutdown();
+        }
     }
 }

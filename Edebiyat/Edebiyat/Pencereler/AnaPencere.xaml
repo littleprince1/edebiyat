@@ -20,7 +20,7 @@
             </Grid.ColumnDefinitions>
             <Label Grid.ColumnSpan="2" Panel.ZIndex="2" MouseDown="DragMove_Event"/>
             <Image x:Name="Logo" Source="/Edebiyat;component/Resimler/Books.png" Margin="2"/>
-            <Label x:Name="W_Title" Grid.Column="1" Content="BASLIK" VerticalContentAlignment="Center" FontSize="19" FontFamily="Global User Interface" FontWeight="Bold" FontStyle="Italic" Foreground="White"/>
+            <Label x:Name="W_Title" Grid.Column="1" Content="EDEBİYATIN İLKLERİ" VerticalContentAlignment="Center" FontSize="19" FontFamily="Global User Interface" FontWeight="Bold" FontStyle="Italic" Foreground="White"/>
             <DockPanel Grid.Column="2" HorizontalAlignment="Right" VerticalAlignment="Top" Height="25" Margin="0,1,0,0">
                 <Button  Style="{StaticResource Window_Top_Buttons}"  Content=""  Click="Window_Minimized"/>
                 <Button  Style="{StaticResource Window_Top_Buttons}"  Content=""  Click="Window_Maximized"/>

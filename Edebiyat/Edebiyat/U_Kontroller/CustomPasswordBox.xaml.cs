@@ -25,8 +25,7 @@ namespace Edebiyat.U_Kontroller
         {
             InitializeComponent();
             pb.Password = Tip;
-            var bc = new BrushConverter();
-            pb.Foreground = (Brush)bc.ConvertFrom("#2f2c38"); ;
+            pb.Foreground = Methods.Hex_to_Brush("#2f2c38");
         }
 
 
@@ -51,8 +50,7 @@ namespace Edebiyat.U_Kontroller
             if (pb.Password.Length == 0)
             {
                 pb.Password = Tip;
-                var bc = new BrushConverter();
-                pb.Foreground = (Brush)bc.ConvertFrom("#2f2c38"); ;
+                pb.Foreground = Methods.Hex_to_Brush("#2f2c38");
             }
         }
 
@@ -61,8 +59,7 @@ namespace Edebiyat.U_Kontroller
             if (pb.Password == Tip)
             {
                 pb.Clear();
-                var bc = new BrushConverter();
-                pb.Foreground = (Brush)bc.ConvertFrom("#e0f8f4"); ;
+                pb.Foreground = Methods.Hex_to_Brush("#e0f8f4");
             }
         }
     }
