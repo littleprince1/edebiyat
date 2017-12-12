@@ -104,6 +104,7 @@
     </Compile>
     <Compile Include="Yardimci_Dosyalar\Methods.cs" />
     <Compile Include="Yardimci_Dosyalar\Pencere_Ayarlari.cs" />
+    <Compile Include="Yardimci_Dosyalar\Şifrele.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Pencereler\AnaPencere.xaml.cs">

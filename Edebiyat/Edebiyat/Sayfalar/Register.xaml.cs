@@ -154,9 +154,9 @@ namespace Edebiyat.Sayfalar
                 {
 
                     User yUser = new User();
-                    yUser.userName = tbxUsername.tb.Text;
-                    yUser.Password = tbxPassword.pb.Password;
-                    yUser.eMail = tbxEmail.tb.Text;
+                    yUser.userName = Yardimci_Dosyalar.Şifreleme.Şifrele.TextSifrele(tbxUsername.tb.Text);
+                    yUser.Password = Yardimci_Dosyalar.Şifreleme.Şifrele.TextSifrele(tbxPassword.pb.Password);
+                    yUser.eMail = Yardimci_Dosyalar.Şifreleme.Şifrele.TextSifrele(tbxEmail.tb.Text);
                     yUser.Image = userImg.Source as BitmapSource;
                     DataController.Db.Users.Add(yUser);
                     DataController.Db.SaveChanges();
