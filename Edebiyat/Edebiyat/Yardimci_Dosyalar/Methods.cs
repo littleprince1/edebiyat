@@ -1,6 +1,7 @@
 ﻿using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Media;
@@ -19,7 +20,15 @@ namespace Edebiyat.Yardimci_Dosyalar
 {
    public static class Methods
     {
+        static Methods()
+        {
+            cpuCounter.CategoryName = "Processor";
+            cpuCounter.CounterName = "% Processor Time";
+            cpuCounter.InstanceName = "_Total";
+        }
         #region Değişkenler
+        //    cpuCounter.NextValue();
+        public static PerformanceCounter cpuCounter = new PerformanceCounter();
         static string Kodtutucu = "AB0CD1E9F6GHI2JKL7MNO3PRSUV4YZX5W8Q";
         static string Karakterler = "A0BC1DE2FGH8I3JK7LMNO4PRST5U9VY6Z";
         public static string Sayılar = "0123456789";
@@ -29,16 +38,14 @@ namespace Edebiyat.Yardimci_Dosyalar
         static string Eposta;
         static MailMessage msj = new MailMessage();
         static SmtpClient client = new SmtpClient();
+
         #endregion
-
-
         public static Brush Hex_to_Brush(string Hex)
         {
             var bc = new BrushConverter();
             var brush = (Brush)bc.ConvertFrom(Hex);
             return brush;
         }
-
         public static bool EmailKontrol(string EpostaAdres)
         {
             const string strRegex = @"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}" +
@@ -47,8 +54,6 @@ namespace Edebiyat.Yardimci_Dosyalar
 
             return (new Regex(strRegex)).IsMatch(EpostaAdres);
         }
-
-
         public static void ResimSeçim(Image Img)
         {
             OpenFileDialog a = new OpenFileDialog()
@@ -83,14 +88,6 @@ namespace Edebiyat.Yardimci_Dosyalar
         public static void SadeceYazıGirme(TextCompositionEventArgs e)
         {
             if (!Sayılar.Contains(e.Text))
-            {
-                e.Handled = true;
-            }
-        }
-
-        public static void BoşlukKontrol(TextCompositionEventArgs e)
-        {
-            if (" ".Contains(e.Text))
             {
                 e.Handled = true;
             }
