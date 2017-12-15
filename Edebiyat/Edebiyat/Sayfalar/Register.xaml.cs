@@ -154,9 +154,9 @@ namespace Edebiyat.Sayfalar
                 {
 
                     User yUser = new User();
-                    yUser.userName = Yardimci_Dosyalar.Şifreleme.Şifrele.TextSifrele(tbxUsername.tb.Text);
-                    yUser.Password = Yardimci_Dosyalar.Şifreleme.Şifrele.TextSifrele(tbxPassword.pb.Password);
-                    yUser.eMail = Yardimci_Dosyalar.Şifreleme.Şifrele.TextSifrele(tbxEmail.tb.Text);
+                    yUser.userName = (tbxUsername.tb.Text);
+                    yUser.Password = (tbxPassword.pb.Password);
+                    yUser.eMail = (tbxEmail.tb.Text);
                     yUser.Image = userImg.Source as BitmapSource;
                     DataController.Db.Users.Add(yUser);
                     DataController.Db.SaveChanges();
@@ -172,6 +172,11 @@ namespace Edebiyat.Sayfalar
             {
                 Bildiri_Pencereleri.Mesaj_Kutusu mesaj_Kutusu = new Bildiri_Pencereleri.Mesaj_Kutusu("Lütfen tüm bilgileri eksiksiz doldurunuz", "", "", "Tamam");
             }
+        }
+
+        private void TextBlock_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            NavigationService.Navigate(new Login());
         }
     }
 }

@@ -13,7 +13,11 @@ namespace Edebiyat.Siniflar
         {
             Db.Accounts.Load();
             Db.Users.Load();
-        
+        }
+        public static void Kullanici_Kontrol()
+        {
+            if (MySettings.Default.Is_there)
+                CurrentUser = Db.Users.Where(x=>x.Id==MySettings.Default.User_id).FirstOrDefault();
         }
         public static User CurrentUser { get; set; }
         public static DbModel Db = new DbModel();

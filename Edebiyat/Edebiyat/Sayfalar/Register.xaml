@@ -34,6 +34,7 @@
                         </Border>
                     </DockPanel>
                     <Button Name="btnRegister" Content="K A Y I T" Style="{StaticResource Tuslar}" Width="100" Height="30" Margin="0,15,0,0" Click="btnRegister_Click"/>
+                    <TextBlock Text="Giriş Yap..." Style="{StaticResource Mini_Close_Button}" MouseLeftButtonUp="TextBlock_MouseLeftButtonDown"/>
                 </StackPanel>
             </Border>
          

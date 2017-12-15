@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using Edebiyat.Sayfalar;
+using Edebiyat.Siniflar;
+using System.Windows;
 using System.Windows.Input;
 namespace Edebiyat.Pencereler
 {
@@ -15,6 +17,11 @@ namespace Edebiyat.Pencereler
             Yardimci_Dosyalar.Pencere_Ayarlari.Main_Window_Logo = Logo;
             Yardimci_Dosyalar.Pencere_Ayarlari.Main_Window_Title = W_Title;
             Yardimci_Dosyalar.Pencere_Ayarlari.Size_adjustment(this);
+            DataController.Kullanici_Kontrol();
+            if (DataController.CurrentUser==null)
+                SayfaYoneticisi.Navigate(new Login());
+            else
+                SayfaYoneticisi.Navigate(new MainPage());
         }
 
         private void DragMove_Event(object sender, MouseButtonEventArgs e) { if (e.LeftButton == MouseButtonState.Pressed) Yardimci_Dosyalar.Pencere_Ayarlari.Window_DragMove(this); }

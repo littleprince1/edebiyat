@@ -34,7 +34,7 @@ namespace Edebiyat.U_Kontroller
         public string C_ToolTip
         {
             get { return toolTip; }
-            set { toolTip = value; Methods.ToolTip(toolTip, tb); }
+            set { toolTip = value; if (!string.IsNullOrWhiteSpace(toolTip)) Methods.ToolTip(toolTip, tb); }
         }
 
         private string tip;

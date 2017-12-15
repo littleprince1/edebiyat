@@ -25,6 +25,6 @@
                 <Button  Style="{StaticResource Window_Top_Buttons}"  Content=""  Click="Window_Closed"/>
             </DockPanel>
         </Grid>
-        <Frame x:Name="SayfaYoneticisi" Visibility="Visible" NavigationUIVisibility="Hidden" Grid.Row="1" Source="/Sayfalar/Register.xaml" Margin="5"/>
+        <Frame x:Name="SayfaYoneticisi" Visibility="Visible" NavigationUIVisibility="Hidden" Grid.Row="1"  Margin="5"/>
     </Grid>
 </Window>

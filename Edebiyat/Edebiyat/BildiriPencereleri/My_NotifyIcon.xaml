@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Edebiyat.Bildiri_Pencereleri"
         mc:Ignorable="d"
-        Title="My_NotifyIcon" Height="420" Width="250"  Background="White" Style="{StaticResource StandartWindow}">
+        Title="My_NotifyIcon" Height="420" Width="250" ShowInTaskbar="False"  Background="White" Style="{StaticResource StandartWindow}">
     <Window.Triggers>
         <EventTrigger RoutedEvent="FrameworkElement.Loaded">
             <BeginStoryboard>
