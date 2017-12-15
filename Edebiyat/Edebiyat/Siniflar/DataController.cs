@@ -18,6 +18,11 @@ namespace Edebiyat.Siniflar
         {
             if (MySettings.Default.Is_there)
                 CurrentUser = Db.Users.Where(x=>x.Id==MySettings.Default.User_id).FirstOrDefault();
+            if (CurrentUser==null)
+            {
+                MySettings.Default.Reset();
+                MySettings.Default.Save();
+            }
         }
         public static User CurrentUser { get; set; }
         public static DbModel Db = new DbModel();

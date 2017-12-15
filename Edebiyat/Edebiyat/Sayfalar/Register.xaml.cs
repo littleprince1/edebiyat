@@ -160,7 +160,7 @@ namespace Edebiyat.Sayfalar
                     yUser.Image = userImg.Source as BitmapSource;
                     DataController.Db.Users.Add(yUser);
                     DataController.Db.SaveChanges();
-                    NavigationService.Refresh();
+                    NavigationService.Navigate(new Login());
                     Bildiri_Pencereleri.Mesaj_Kutusu mesaj_Kutusu = new Bildiri_Pencereleri.Mesaj_Kutusu("Kullanıcı Başarı ile Kayıt Edildi.","","","Tamam");
                 }
                 else
