@@ -49,8 +49,9 @@ namespace Edebiyat.Sayfalar
         {
             if (Kontrol())
             {
-                
-                Siniflar.User user = Siniflar.DataController.Db.Users.Where(x => x.userName == tbxUsername.tb.Text && x.Password == tbxPassword.pb.Password).FirstOrDefault();
+                string un = Yardimci_Dosyalar.Sifrele.TextSifrele(tbxUsername.tb.Text);
+                string pw = Yardimci_Dosyalar.Sifrele.TextSifrele(tbxPassword.pb.Password);
+                Siniflar.User user = Siniflar.DataController.Db.Users.Where(x => (x.userName) == un && (x.Password) == pw).FirstOrDefault();
                 if (user != null)
                 {
                     Siniflar.DataController.CurrentUser = user;

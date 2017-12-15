@@ -154,9 +154,9 @@ namespace Edebiyat.Sayfalar
                 {
 
                     User yUser = new User();
-                    yUser.userName = (tbxUsername.tb.Text);
-                    yUser.Password = (tbxPassword.pb.Password);
-                    yUser.eMail = (tbxEmail.tb.Text);
+                    yUser.userName = Sifrele.TextSifrele(tbxUsername.tb.Text);
+                    yUser.Password = Sifrele.TextSifrele(tbxPassword.pb.Password);
+                    yUser.eMail = Sifrele.TextSifrele(tbxEmail.tb.Text);
                     yUser.Image = userImg.Source as BitmapSource;
                     DataController.Db.Users.Add(yUser);
                     DataController.Db.SaveChanges();
