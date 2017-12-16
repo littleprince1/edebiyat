@@ -16,6 +16,7 @@
         <SolidColorBrush x:Key="color_9" Color="#2f2c38" />
         <SolidColorBrush x:Key="color_10" Color="#373442" />
         <SolidColorBrush x:Key="color_11" Color="#504c57" />
+        <SolidColorBrush x:Key="color_12" Color="#FF1D416E" />
         <Style x:Key="Window_Top_Buttons" TargetType="Button">
             <Setter Property="Template">
                 <Setter.Value>

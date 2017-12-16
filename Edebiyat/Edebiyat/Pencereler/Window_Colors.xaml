@@ -34,5 +34,6 @@
         <Border Background="{StaticResource color_9}"  Grid.Column="9"/>
         <Border Background="{StaticResource color_10}"  Grid.Column="10"/>
         <Border Background="{StaticResource color_11}"  Grid.Column="11"/>
+        <Border Background="{StaticResource color_12}"  Grid.Column="12"/>
     </Grid>
 </Window>

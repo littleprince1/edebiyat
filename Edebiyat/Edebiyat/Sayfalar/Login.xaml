@@ -21,7 +21,7 @@
                         <TextBlock  Foreground="{StaticResource color_0}" Text="Parola: " Width="100" TextAlignment="Left"/>
                         <U_Kontroller:CustomPasswordBox  x:Name="tbxPassword" Tip="Parola" Width="150" />
                     </DockPanel>
-                    <Button Name="btnLogin" Content="K A Y I T" Style="{StaticResource Tuslar}" Width="100" Height="30" Margin="0,15,0,0" Click="btnLogin_Click"/>
+                    <Button Name="btnLogin" Content="G İ R İ Ş" Style="{StaticResource Tuslar}" Width="100" Height="30" Margin="0,15,0,0" Click="btnLogin_Click"/>
                     <TextBlock Text="Kayıt ol..." Style="{StaticResource Mini_Close_Button}" MouseLeftButtonUp="TextBlock_MouseLeftButtonDown"/>
                 </StackPanel>
             </Border>

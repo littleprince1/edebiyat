@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,6 +24,21 @@ namespace Edebiyat.Sayfalar
         public MainPage()
         {
             InitializeComponent();
+        }
+
+        bool durum=true;
+        private void Btn_Oyna_Click(object sender, RoutedEventArgs e)
+        {
+            if (durum==true)
+            {
+                col.Width = new GridLength(0);
+                durum = false;
+            }
+            else
+            {
+                col.Width = new GridLength(30,GridUnitType.Star);
+                durum = true;
+            }
         }
     }
 }
